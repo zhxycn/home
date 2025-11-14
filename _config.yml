@@ -1,0 +1,31 @@
+# Site 站点配置
+site:
+  title: xychan~
+  description: zhxycn's home
+  icon: /favicon.ico
+
+# Author 站长信息
+author:
+  name: zhxycn
+  description: A Student & Developer
+  avatar: https://static.owo.cab/avatar.webp
+  email: i@owo.cab
+  blog: https://www.owo.cab
+  github: zhxycn
+  twitter: zhxycn
+  telegram: ''
+  linkedin: ''
+  steam: '76561199220666569'
+  bilibili: '522200423'
+
+# Footer 页脚配置
+footer:
+  icp: 陕ICP备2025063787号
+
+# Style 样式配置
+style:
+  background:
+    image: ''
+    particle: true
+  cursor_effects: true
+  hitokoto: true
