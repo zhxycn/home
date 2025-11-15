@@ -22,7 +22,8 @@ function randomColor(): string {
   const h = Math.floor(Math.random() * 360)
   const s = Math.floor(Math.random() * (95 - 75) + 75)
   const l = Math.floor(Math.random() * (60 - 45) + 45)
-  return `hsla(${h}, ${s}%, ${l}%, 0.20)`
+  const a = Math.random() * 0.1 + 0.2
+  return `hsla(${h}, ${s}%, ${l}%, ${a})`
 }
 
 function resize(): void {

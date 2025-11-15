@@ -5,7 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import {
   faGithub,
-  faTwitter,
+  faXTwitter,
   faTelegram,
   faLinkedin,
   faSteam,
@@ -13,24 +13,9 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faHouse } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faGithub, faTwitter, faTelegram, faLinkedin, faSteam, faBilibili, faEnvelope, faHouse)
+library.add(faGithub, faXTwitter, faTelegram, faLinkedin, faSteam, faBilibili, faEnvelope, faHouse)
 
 type Link = { label: string; url: string; icon: ['fab' | 'fas', string]; color?: string }
-
-function computeBackground(hex: string, alpha = 0.14): string {
-  const h = hex.replace('#', '')
-  const full =
-    h.length === 3
-      ? h
-          .split('')
-          .map((c) => c + c)
-          .join('')
-      : h
-  const r = parseInt(full.slice(0, 2), 16)
-  const g = parseInt(full.slice(2, 4), 16)
-  const b = parseInt(full.slice(4, 6), 16)
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`
-}
 
 const email = config.author.email as string | undefined
 const blog = (config.author['blog'] as string | undefined) || undefined
@@ -61,8 +46,8 @@ const links = computed<Link[]>(() => {
     arr.push({
       label: 'X',
       url: twitter.startsWith('http') ? twitter : `https://x.com/${twitter}`,
-      icon: ['fab', 'twitter'],
-      color: '#1DA1F2',
+      icon: ['fab', 'x-twitter'],
+      color: '#000000',
     })
   if (telegram)
     arr.push({
@@ -112,12 +97,18 @@ const links = computed<Link[]>(() => {
       target="_blank"
       rel="noopener noreferrer"
       :aria-label="item.label"
-      class="w-10 h-10 inline-flex items-center justify-center rounded-full text-[24px] text-gray-700/90 dark:text-gray-200/90 ring-1 ring-black/3 dark:ring-white/8 hover:-translate-y-0.5 transition-transform duration-150 hover:bg-(--hover-color)"
+      class="group relative w-10 h-10 inline-flex items-center justify-center rounded-full text-[24px] text-gray-700/90 dark:text-gray-200/90 ring-1 ring-black/3 dark:ring-white/20 dark:bg-white/85 hover:-translate-y-0.5 transition-transform duration-150 hover:bg-(--bg-color)"
       :style="{
-        '--hover-color': item.color ? computeBackground(item.color) : undefined,
+        '--bg-color': item.color,
+        '--icon-color': item.color,
       }"
     >
-      <FontAwesomeIcon :icon="item.icon" :style="{ color: item.color }" />
+      <FontAwesomeIcon :icon="item.icon" class="text-(--icon-color) group-hover:text-[#E8E8E8]" />
+      <span
+        class="pointer-events-none absolute left-1/2 -translate-x-1/2 bottom-full mb-1.5 z-10 px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 bg-neutral-900/85 text-white dark:bg-white/85 dark:text-black ring-1 ring-black/10 dark:ring-white/20"
+      >
+        {{ item.label }}
+      </span>
     </a>
   </nav>
 </template>

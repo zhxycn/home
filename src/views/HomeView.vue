@@ -41,14 +41,14 @@ onMounted(() => {
 <template>
   <section class="w-full">
     <div
-      class="mx-auto w-full max-w-[960px] flex flex-col-reverse md:flex-row items-center justify-between gap-8"
+      class="mx-auto w-full max-w-[960px] flex flex-col-reverse md:flex-row items-center justify-between gap-8 dark:text-white"
     >
       <div class="flex-1">
         <!-- 问候 -->
         <h1 class="text-3xl md:text-4xl tracking-wide text-center md:text-left mt-4 md:mt-0">
           Hi, I'm
           <span
-            class="bg-linear-to-r from-sky-400 to-violet-500 bg-clip-text text-transparent font-semibold"
+            class="bg-linear-to-r from-sky-400 to-violet-500 dark:from-sky-300 dark:to-violet-400 bg-clip-text text-transparent font-semibold"
           >
             {{ config.author.name }}
           </span>
