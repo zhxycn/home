@@ -15,7 +15,7 @@ onMounted(() => {
   <!-- 背景 -->
   <div>
     <!-- 底色 -->
-    <div class="fixed inset-0 -z-60 pointer-events-none bg-[#F3F4F5] dark:bg-[#1C1D1E]"></div>
+    <div class="fixed inset-0 -z-60 pointer-events-none bg-white dark:bg-[#1C1D1E]"></div>
 
     <!-- 背景图 -->
     <div
@@ -35,9 +35,7 @@ onMounted(() => {
   >
     <!-- 内容 -->
     <main class="flex items-center justify-center grow shrink-0 basis-auto p-4 w-full box-border">
-      <div
-        class="w-full max-w-[1280px] mx-auto p-4 box-border flex flex-col items-center justify-center"
-      >
+      <div class="w-full mx-auto p-4 box-border flex flex-col items-center justify-center">
         <RouterView />
       </div>
     </main>

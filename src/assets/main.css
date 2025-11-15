@@ -1,8 +1,9 @@
-@import url('https://font.sec.miui.com/font/css?family=MiSans:400:Chinese_Simplify,Latin&display=swap');
+@import url('https://font.sec.miui.com/font/css?family=MiSans:300,400:Chinese_Simplify,Latin&display=swap');
 @import 'tailwindcss';
 
 @layer base {
   * {
     font-family: 'MiSans', sans-serif;
+    font-weight: 300;
   }
 }

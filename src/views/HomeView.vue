@@ -41,7 +41,7 @@ onMounted(() => {
 <template>
   <section class="w-full">
     <div
-      class="mx-auto w-full max-w-[960px] flex flex-col-reverse md:flex-row items-center justify-between gap-8 dark:text-white"
+      class="mx-auto w-full max-w-[1040px] flex flex-col-reverse md:flex-row items-center justify-between gap-8 dark:text-white"
     >
       <div class="flex-1">
         <!-- 问候 -->
@@ -62,7 +62,7 @@ onMounted(() => {
         <!-- 一言 -->
         <div
           v-if="config.style.hitokoto"
-          class="flex w-full mt-1 md:mt-2 py-6 text-sm opacity-75 min-h-[140px]"
+          class="flex w-full mt-1 md:mt-2 py-6 text-sm opacity-75 min-h-[120px]"
         >
           <p v-if="hitokotoLoading">Loading...</p>
           <p v-else class="leading-relaxed min-w-[280px] max-w-[480px]">
@@ -75,7 +75,7 @@ onMounted(() => {
         <div v-else class="min-h-[50px]"></div>
 
         <!-- 社交平台 -->
-        <div class="mt-4 md:mt-6">
+        <div class="md:mt-2">
           <SocialBar />
         </div>
       </div>
